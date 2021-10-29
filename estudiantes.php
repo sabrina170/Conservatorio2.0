@@ -233,9 +233,7 @@ $resultado = mysqli_query($cn, $consulta);
                                         <a href="Edit-alum.php?id=<?php echo $show['id']; ?>&nt=0"> <i class="fas fa-edit"></i></a>
                                         <a href="" type="button" data-toggle="modal" data-target="#Eliminar<?php echo $show['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                                     </td>
-
                                 </tr>
-
                             <?php
                                 include('modals/modal-fotoUser.php');
                                 include('modals/modal-Elimina-Alum.php');
