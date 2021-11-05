@@ -1,5 +1,12 @@
 <?php include('header-link.php'); ?>
-
+<?php
+if (!isset($_SESSION['user_tipo'])) {
+    header('Location:index.php?nt=0');
+} else {
+    if ($_SESSION['user_tipo'] == 2) {
+        header('Location:index.php?nt=0');
+    }
+} ?>
 <?php include('header.php');
 include('controlador/conexion.php');
 

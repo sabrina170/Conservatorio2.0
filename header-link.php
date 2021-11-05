@@ -37,4 +37,9 @@ $alumnos = $registro3->fetch_assoc();
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" rel="stylesheet" />
 
+  <link href='lib/main.css' rel='stylesheet' />
+  <script src='lib/main.js'></script>
+  <script src='lib/locales/es.js'></script>
+  <!-- Para el calendario -->
+
 </head>

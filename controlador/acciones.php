@@ -12,6 +12,10 @@ switch ($accion) {
             // $image = $_FILES['foto']['tmp_name'];
             move_uploaded_file($_FILES['foto']['tmp_name'], $ruta);
 
+            // genera el color
+            $color = '#' . str_pad(dechex(Rand(0x000000, 0xFFFFFF)), 6, 0, STR_PAD_LEFT);
+            // echo ('#' . $Rand);
+
 
             $nombres = $_POST['nombres'];
             $apellidos = $_POST['apellidos'];
@@ -26,9 +30,9 @@ switch ($accion) {
 
             $imgContenido = addslashes(file_get_contents($foto));
             $insertar = $cn->query("INSERT INTO `adminuser` (`id`, `nombres`, `apellidos`, `usuario`, 
-                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`)
+                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`)
                  VALUES (NULL,'$nombres','$apellidos','$usuario','$clave','$especialidad','$ruta',
-                 '$tipo','$estado','','$dni','$telefono')");
+                 '$tipo','$estado','','$dni','$telefono','$color')");
 
             if ($insertar) {
                 header('Location: ../profesores.php?nt=1');
@@ -51,7 +55,9 @@ switch ($accion) {
             // $image = $_FILES['foto']['tmp_name'];
             move_uploaded_file($_FILES['foto']['tmp_name'], $ruta);
 
-
+            // genera el color
+            $color = '#' . str_pad(dechex(Rand(0x000000, 0xFFFFFF)), 6, 0, STR_PAD_LEFT);
+            // echo ('#' . $Rand);
             $nombres = $_POST['nombres'];
             $apellidos = $_POST['apellidos'];
             $usuario = $_POST['usuario'];
@@ -65,9 +71,9 @@ switch ($accion) {
 
             $imgContenido = addslashes(file_get_contents($foto));
             $insertar = $cn->query("INSERT INTO `adminuser` (`id`, `nombres`, `apellidos`, `usuario`, 
-                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`)
+                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`)
                  VALUES (NULL,'$nombres','$apellidos','$usuario','$clave','$especialidad','$ruta',
-                 '$tipo','$estado','','$dni','$telefono')");
+                 '$tipo','$estado','','$dni','$telefono','$color')");
 
             if ($insertar) {
                 header('Location: ../profesores.php?nt=1');
@@ -87,6 +93,9 @@ switch ($accion) {
         include('conexion.php');
         $revisar = getimagesize($_FILES["foto"]["tmp_name"]);
         if ($revisar) {
+            // genera el color
+            $color = '#' . str_pad(dechex(Rand(0x000000, 0xFFFFFF)), 6, 0, STR_PAD_LEFT);
+            // echo ('#' . $Rand);
             $ruta = 'imagenes/' . $_FILES['foto']['name'];
             // $image = $_FILES['foto']['tmp_name'];
             move_uploaded_file($_FILES['foto']['tmp_name'], $ruta);
@@ -103,9 +112,9 @@ switch ($accion) {
             // $foto = $_FILES['foto']['tmp_name'];
 
             $insertar = $cn->query("INSERT INTO `adminuser` (`id`, `nombres`, `apellidos`, `usuario`, 
-                    `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`)
+                    `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`)
                      VALUES (NULL,'$nombres','$apellidos','$usuario','$clave','','$ruta',
-                     '$tipo','$estado','','$dni','$telefono')");
+                     '$tipo','$estado','','$dni','$telefono','$color')");
 
             if ($insertar) {
                 header('Location: ../estudiantes.php?nt=1');

@@ -44,7 +44,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <?php if ($_SESSION['user_foto'] == '(null)') {
+            <?php if ($_SESSION['user_foto'] == '') {
             ?>
               <img src="controlador/imagenes/defecto.png" class="img-circle elevation-2" alt="User Image">
             <?php
@@ -106,6 +106,14 @@
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="calendario.php" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                    Calendario
+                  </p>
+                </a>
+              </li>
             <?php } else  if ($tipo == '2') {
             ?>
               <li class="nav-item">
@@ -113,6 +121,14 @@
                   <i class="nav-icon fas fa-columns"></i>
                   <p>
                     Mis Cursos
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="calendario.php" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                    Calendario
                   </p>
                 </a>
               </li>
@@ -126,7 +142,14 @@
                   </p>
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a href="calendario.php" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>
+                    Calendario
+                  </p>
+                </a>
+              </li>
             <?php } else  if ($tipo == '3') {
             ?>
               <li class="nav-item">
@@ -147,11 +170,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="calendario.php" class="nav-link">
                   <i class="nav-icon far fa-image"></i>
                   <p>
                     Calendario
-                    <span class="badge badge-info right"><?php echo $alumnos['total']; ?></span>
                   </p>
                 </a>
               </li>
