@@ -26,13 +26,14 @@ switch ($accion) {
             $dni = $_POST['dni'];
             $estado = $_POST['estado'];
             $telefono = $_POST['telefono'];
+            $correo = $_POST['correo'];
             // $foto = $_FILES['foto']['tmp_name'];
 
             $imgContenido = addslashes(file_get_contents($foto));
             $insertar = $cn->query("INSERT INTO `adminuser` (`id`, `nombres`, `apellidos`, `usuario`, 
-                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`)
+                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`,`correo`)
                  VALUES (NULL,'$nombres','$apellidos','$usuario','$clave','$especialidad','$ruta',
-                 '$tipo','$estado','','$dni','$telefono','$color')");
+                 '$tipo','$estado','','$dni','$telefono','$color','$correo')");
 
             if ($insertar) {
                 header('Location: ../profesores.php?nt=1');
@@ -67,13 +68,14 @@ switch ($accion) {
             $dni = $_POST['dni'];
             $estado = $_POST['estado'];
             $telefono = $_POST['telefono'];
+            $correo = $_POST['correo'];
             // $foto = $_FILES['foto']['tmp_name'];
 
             $imgContenido = addslashes(file_get_contents($foto));
             $insertar = $cn->query("INSERT INTO `adminuser` (`id`, `nombres`, `apellidos`, `usuario`, 
-                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`)
+                `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`,`correo`)
                  VALUES (NULL,'$nombres','$apellidos','$usuario','$clave','$especialidad','$ruta',
-                 '$tipo','$estado','','$dni','$telefono','$color')");
+                 '$tipo','$estado','','$dni','$telefono','$color','$correo')");
 
             if ($insertar) {
                 header('Location: ../profesores.php?nt=1');
@@ -109,12 +111,13 @@ switch ($accion) {
             $dni = $_POST['dni'];
             $estado = $_POST['estado'];
             $telefono = $_POST['telefono'];
+            $correo = $_POST['correo'];
             // $foto = $_FILES['foto']['tmp_name'];
 
             $insertar = $cn->query("INSERT INTO `adminuser` (`id`, `nombres`, `apellidos`, `usuario`, 
-                    `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`)
+                    `clave`, `especialidad`, `foto`, `tipo`, `estado`, `modificado`, `dni`,`telefono`,`color`,`correo`)
                      VALUES (NULL,'$nombres','$apellidos','$usuario','$clave','','$ruta',
-                     '$tipo','$estado','','$dni','$telefono','$color')");
+                     '$tipo','$estado','','$dni','$telefono','$color','$correo')");
 
             if ($insertar) {
                 header('Location: ../estudiantes.php?nt=1');
@@ -183,10 +186,12 @@ switch ($accion) {
         // $foto = $_FILES['foto']['tmp_name'];
         $id = $_POST['id'];
         $muser = $_POST['muser'];
+        $correo = $_POST['correo'];
 
         if ($image == '') {
             $insertar = $cn->query("UPDATE `adminuser` SET `nombres` = '$nombres', `apellidos` = '$apellidos', 
-            `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado' WHERE `adminuser`.`id` = '$id';");
+            `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo', 
+             `dni` = '$dni', `estado` = '$estado',`correo` = '$correo' WHERE `adminuser`.`id` = '$id';");
 
             if ($insertar) {
                 $modificado = $cn->query("UPDATE `adminuser` SET `modificado` = '$muser' WHERE `adminuser`.`id` = '$id';");
@@ -202,7 +207,8 @@ switch ($accion) {
             }
         } else {
             $insertar = $cn->query("UPDATE `adminuser` SET `foto` = '$ruta',`nombres` = '$nombres', `apellidos` = '$apellidos', 
-                    `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado' WHERE `adminuser`.`id` = '$id';");
+                    `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad',
+                     `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado',`correo` = '$correo' WHERE `adminuser`.`id` = '$id';");
 
             if ($insertar) {
                 $modificado = $cn->query("UPDATE `adminuser` SET `modificado` = '$muser' WHERE `adminuser`.`id` = '$id';");
@@ -238,10 +244,12 @@ switch ($accion) {
         // $foto = $_FILES['foto']['tmp_name'];
         $id = $_POST['id'];
         $muser = $_POST['muser'];
+        $correo = $_POST['correo'];
 
         if ($image == '') {
             $insertar = $cn->query("UPDATE `adminuser` SET `nombres` = '$nombres', `apellidos` = '$apellidos', 
-            `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado' WHERE `adminuser`.`id` = '$id';");
+            `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo',
+              `dni` = '$dni', `estado` = '$estado',`correo` = '$correo' WHERE `adminuser`.`id` = '$id';");
 
             if ($insertar) {
                 $modificado = $cn->query("UPDATE `adminuser` SET `modificado` = '$muser' WHERE `adminuser`.`id` = '$id';");
@@ -257,7 +265,8 @@ switch ($accion) {
             }
         } else {
             $insertar = $cn->query("UPDATE `adminuser` SET `foto` = '$ruta',`nombres` = '$nombres', `apellidos` = '$apellidos', 
-                    `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado' WHERE `adminuser`.`id` = '$id';");
+                    `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', 
+                    `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado',`correo` = '$correo' WHERE `adminuser`.`id` = '$id';");
 
             if ($insertar) {
                 $modificado = $cn->query("UPDATE `adminuser` SET `modificado` = '$muser' WHERE `adminuser`.`id` = '$id';");
@@ -289,13 +298,15 @@ switch ($accion) {
         $tipo = $_POST['tipo'];
         $dni = $_POST['dni'];
         $estado = $_POST['estado'];
+        $correo = $_POST['correo'];
         // $foto = $_FILES['foto']['tmp_name'];
         $id = $_POST['id'];
         $muser = $_POST['muser'];
 
         if ($image == '') {
             $insertar = $cn->query("UPDATE `adminuser` SET `nombres` = '$nombres', `apellidos` = '$apellidos', 
-                `usuario` = '$usuario', `clave` = '$clave',  `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado' WHERE `adminuser`.`id` = '$id';");
+                `usuario` = '$usuario', `clave` = '$clave',  `tipo` = '$tipo',  `dni` = '$dni',
+                 `estado` = '$estado',`correo` = '$correo' WHERE `adminuser`.`id` = '$id';");
 
             if ($insertar) {
                 $modificado = $cn->query("UPDATE `adminuser` SET `modificado` = '$muser' WHERE `adminuser`.`id` = '$id';");
@@ -311,7 +322,10 @@ switch ($accion) {
             }
         } else {
             $insertar = $cn->query("UPDATE `adminuser` SET `foto` = '$ruta',`nombres` = '$nombres', `apellidos` = '$apellidos', 
-                        `usuario` = '$usuario', `clave` = '$clave', `especialidad` = '$especialidad', `tipo` = '$tipo',  `dni` = '$dni', `estado` = '$estado' WHERE `adminuser`.`id` = '$id';");
+                        `usuario` = '$usuario', `clave` = '$clave',
+                         `especialidad` = '$especialidad',
+                          `tipo` = '$tipo',  `dni` = '$dni',
+                           `estado` = '$estado',`correo` = '$correo' WHERE `adminuser`.`id` = '$id';");
 
             if ($insertar) {
                 $modificado = $cn->query("UPDATE `adminuser` SET `modificado` = '$muser' WHERE `adminuser`.`id` = '$id';");

@@ -14,6 +14,8 @@ if ($query) {
             'nombres' => $list['nombres'],
             'color' => $list['color'],
             'especialidad' => $list['especialidad'],
+            'correo' => $list['correo'],
+
         );
         echo json_encode($cupon_estructura);
     }

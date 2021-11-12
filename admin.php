@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_tipo'])) {
 <?php include('header.php');
 include('controlador/conexion.php');
 $nt = $_REQUEST['nt'];
-$consulta = "SELECT * FROM adminuser";
+$consulta = "SELECT * FROM adminuser ";
 $resultado = mysqli_query($cn, $consulta);
 ?>
 <style>
@@ -24,14 +24,12 @@ $resultado = mysqli_query($cn, $consulta);
     }
 </style>
 <div class="content-wrapper" style="padding: 0px 30px 30px 30px; background-color: #e0e0e0;">
-
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0" style="color: #06599e;"><strong>Usuarios</strong> </h1>
                 </div>
-
             </div>
         </div>
     </div>
@@ -151,6 +149,12 @@ $resultado = mysqli_query($cn, $consulta);
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-8">
+                                        <label for="inputEmail4">Correo</label>
+                                        <input type="email" class="form-control" name="correo" required>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-md-2">
                             <label for="inputState">Imagen</label>
@@ -181,7 +185,8 @@ $resultado = mysqli_query($cn, $consulta);
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Cargo</th>
                                 <th scope="col">Usuario</th>
-                                <th scope="col">Constraseña</th>
+                                <th scope="col">Contraseña</th>
+                                <th scope="col">Correo</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Modificado</th>
                                 <th scope="col">Acciones</th>
@@ -234,6 +239,9 @@ $resultado = mysqli_query($cn, $consulta);
                                     </td>
                                     <td>
                                         <?php echo $show['clave'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $show['correo'] ?>
                                     </td>
                                     <td>
                                         <?php

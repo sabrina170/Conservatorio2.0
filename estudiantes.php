@@ -133,6 +133,12 @@ $resultado = mysqli_query($cn, $consulta);
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Correo</label>
+                                        <input type="text" class="form-control" name="correo" required>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-md-2">
                             <label for="inputState">Imagen</label>
@@ -159,11 +165,12 @@ $resultado = mysqli_query($cn, $consulta);
                                 <th scope="col">Foto</th>
                                 <th scope="col">Nombres</th>
                                 <th scope="col">Apellidos</th>
-                                <th scope="col">Especialidad</th>
+                                <!-- <th scope="col">Especialidad</th> -->
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Cargo</th>
                                 <th scope="col">Usuario</th>
                                 <th scope="col">Constraseña</th>
+                                <th scope="col">Correo</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Modificado</th>
                                 <th scope="col">Acciones</th>
@@ -193,9 +200,9 @@ $resultado = mysqli_query($cn, $consulta);
                                     <td>
                                         <?php echo $show['apellidos'] ?>
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         <?php echo $show['especialidad'] ?>
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <?php echo $show['telefono'] ?>
                                     </td>
@@ -206,6 +213,8 @@ $resultado = mysqli_query($cn, $consulta);
                                             echo '<strong> Profesor</strong>';
                                         } else if ($show['tipo'] == 3) {
                                             echo '<strong> Trabajador</strong>';
+                                        } else if ($show['tipo'] == 4) {
+                                            echo '<strong> Estudiante</strong>';
                                         }
                                         ?>
                                     </td>
@@ -214,6 +223,9 @@ $resultado = mysqli_query($cn, $consulta);
                                     </td>
                                     <td>
                                         <?php echo $show['clave'] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $show['correo'] ?>
                                     </td>
                                     <td>
                                         <?php

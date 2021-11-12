@@ -9,7 +9,6 @@ if ($usuario == $login['usuario']) {
 		if ($login['estado'] == 1) {
 			session_start();
 			$_SESSION['user_id'] = $login['id'];
-			$_SESSION['user_name'] = utf8_encode($login['nombres'] . " " . $login['apellidos']);
 			$_SESSION['user_nombre'] = utf8_encode($login['nombres']);
 			$_SESSION['user_apellido'] = utf8_encode($login['apellidos']);
 			$_SESSION['user_tipo'] = $login['tipo'];
@@ -18,6 +17,7 @@ if ($usuario == $login['usuario']) {
 			$_SESSION['user_foto'] = $login['foto'];
 			$_SESSION['user_espe'] = $login['especialidad'];
 			$_SESSION['user_dni'] = $login['dni'];
+			$_SESSION['user_correo'] = $login['correo'];
 
 			if ($login['tipo'] == 1) {
 				header("location:admin.php?nt=0");

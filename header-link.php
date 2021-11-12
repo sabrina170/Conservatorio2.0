@@ -2,7 +2,7 @@
 
 session_start();
 $tipo = $_SESSION['user_tipo'];
-$muser = $_SESSION['user_name'];
+$muser = $_SESSION['user_nombre'];
 include('controlador/conexion.php');
 $registro = $cn->query("SELECT COUNT(*) total FROM adminuser ");
 $usuarios = $registro->fetch_assoc();
@@ -35,11 +35,13 @@ $alumnos = $registro3->fetch_assoc();
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" rel="stylesheet" />
-
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href='lib/main.css' rel='stylesheet' />
   <script src='lib/main.js'></script>
   <script src='lib/locales/es.js'></script>
   <!-- Para el calendario -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
 
 </head>

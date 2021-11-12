@@ -136,6 +136,12 @@ $resultado = mysqli_query($cn, $consulta);
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-8">
+                                            <label for="inputEmail4">Correo</label>
+                                            <input type="text" class="form-control" value="<?php echo $dat['correo'] ?>" name="correo">
+                                        </div>
+                                    </div>
                             </div>
                             <div class="col-md-2">
                                 <label for="inputState">Imagen</label>

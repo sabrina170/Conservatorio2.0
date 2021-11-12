@@ -45,7 +45,7 @@ $registro = $cn->query("SELECT * FROM mes");
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <!-- <label for="inputState">Foto</label> -->
                                 <?php if ($_SESSION['user_foto'] == '') {
                                 ?>
@@ -57,32 +57,13 @@ $registro = $cn->query("SELECT * FROM mes");
                                 }
                                 ?>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="form-row">
                                     <div class="form-group col-12">
                                         <label for="inputEmail4">Nombres :</label>
                                         <h6 for="inputEmail4"><?php echo $show['nombres'] ?></h6>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label for="inputEmail4">Apellidos :</label>
-                                        <h6 for="inputEmail4"><?php echo $show['apellidos'] ?></h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label for="inputEmail4">Dni :</label><br>
-                                        <h6 for="inputEmail4"><?php echo $show['dni'] ?></h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-2">
                                 <div class="form-row">
                                     <div class="form-group col-12">
                                         <label for="inputEmail4">Celular :</label><br>
@@ -90,11 +71,31 @@ $registro = $cn->query("SELECT * FROM mes");
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="inputEmail4">Apellidos :</label>
+                                        <h6 for="inputEmail4"><?php echo $show['apellidos'] ?></h6>
+                                    </div>
+                                </div>
                                 <div class="form-row">
                                     <div class="form-group col-12">
                                         <label for="inputEmail4">Especialidad :</label><br>
                                         <h6 for="inputEmail4"><?php echo $show['especialidad'] ?></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="inputEmail4">Dni :</label><br>
+                                        <h6 for="inputEmail4"><?php echo $show['dni'] ?></h6>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="inputEmail4">Correo :</label><br>
+                                        <h6 for="inputEmail4"><?php echo $show['correo'] ?></h6>
                                     </div>
                                 </div>
                             </div>
